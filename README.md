@@ -1,5 +1,6 @@
 # youtube---hindilish-comments-sentimental-analysis
 Abstract: As we know YouTube has become the biggest and most widely used social media platform, in which people use it for entertainment purpose, study purpose, sports ,news,etc. Our goal is to create a communication between the channel creator and a subscriber. Viewers can express their opinions, suggestions and emotion in the comment section. Through our analysis the channel owner would be able to know what the viewers are expecting from them, so that they utilize this information and use it  for increasing their views. For such analysis we selected a top two  Indian cookery channels of India namely KABITHA‘s kitchen and NISHA MADULIKHA ‘s Kitchen. These two channels contain hinglish comments, we are going to perform sentimental analysis on hinglish comments. Two featuring techniques called count vectorizer and TFIDF vectorizer were used, and a number of parametric and non-parametric machine learning models were applied on two datasets with the two vectorizers. Logistic regression with  count vectorizer gave an accuracy of 77.4% on kabitha’s kitchen dataset and Nisha’s kitchen dataset gave an accuracy of 76.4% . Every classifier was statically tested and implemented. 
+
 Keywords: sentimental analysis, machine learning, hinglish, cookery channels. 
 
 III METHODOLOGY
@@ -10,11 +11,14 @@ Data gathering: The data was taken from the top two cookery you tube channels ka
 
 1) label 1: gratitude 
             	This label of comments contains people who express their gratitude after watching the video. For example bahuth danyavad, tanqu so much aunty, your video was very helpful etc. 
+
 2)label 2: About recipe  
            	In this label of comments contain people who talk about recipe whether the recipe is good or bad. Example : yein recipe bahuth tasty Hain, yuuuumyy, I love all your recipies etc 
+
 3)label 3: About video 
             	In this label of comments contain people who talk about the video quality like whether the video is too length or too short or the clarity of the video.  
 Example : acha video hain, nice video. 
+
 4)label 4: Praising  
        	In this label of comments contain people who praise the chef , viewers express appreciation towards the chef. 
 Example: ur great mam, the best cook etc. 
@@ -26,12 +30,15 @@ Example: hello mam your really great ,thanq u for ur recipies
  
 6) label 6: undefined  
              	In this label of comments contain the comments which are not related to any of the above categories. 
+
 7) label 7: (suggestions or queries) 
            	In this label of comments contain people who ask suggesions or queries regarded to the recipe 
 Example: chilly kaa quantity kitna dalu . 
 
 Data preprocessing:
-The two datasets were with noisy data with punctuations, upper case letters emojis symbols, stop words etc. , these types of text are to be removed because they are of no use moreover, these texts text slow down the performance of the machine learning models. Removal of such things is done in this phase called data preprocessing, it means that preparing the data in a clean and a proper format data for the implementation of the models. This process involves removal of puncuation , if the data contains {,.} should be removed  the next step is to convert the upper case letters into lower case letters because the models assume that the upper case letter and the lower case letter are different. Then the next step is stemming, in this process the words like go,going,gone will all be considered as one. The next step is tokenization, in this stage the data is splitted intotokens.Removing the stop words is not an easy task because there is no inbuilt stop words list for hinglish  like English. So we created  manually a hinglish stop words list even though it wasn't enough but we managed with them to the extent. The stop words list contains like words such as {hain,aap,aapke …} , after removal of stop words , puncuations , numbers the clean data is converted into a corpus. 
+The two datasets were with noisy data with punctuations, upper case letters emojis symbols, stop words etc. , these types of text are to be removed because they are of no use moreover, these texts text slow down the performance of the machine learning models. Removal of such things is done in this phase called data preprocessing, it means that preparing the data in a clean and a proper format data for the implementation of the models. This process involves removal of puncuation , if the data contains {,.} should be removed  the next step is to convert the upper case letters into lower case letters because the models assume that the upper case letter and the lower case letter are different. Then the next step is stemming, in this process the words like go,going,gone will all be considered as one. 
+
+The next step is tokenization, in this stage the data is splitted intotokens.Removing the stop words is not an easy task because there is no inbuilt stop words list for hinglish  like English. So we created  manually a hinglish stop words list even though it wasn't enough but we managed with them to the extent. The stop words list contains like words such as {hain,aap,aapke …} , after removal of stop words , puncuations , numbers the clean data is converted into a corpus. 
 
 Even though we are implementing the machine learning models , the models cannot directly deal with the text data , so this is one of the important stage of this process this where the data is converted into certain features for the implementation of machine learning algorithms. 
 
